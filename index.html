@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="script.js"></script>
+</head>
+<body>
+
+   <div class="container">
+    <h1>Currency Converter</h1>
+    <div class="wrap1">
+    <input type="number" id="fromAmount" placeholder="Enter the Value" autocomplete="off" oninput="calculate()">
+    <select id="fromCurrency">
+        </select>
+      </div>
+      <div class="wrap2">
+    <input type="number" id="toAmount" placeholder="Enter the Value" autocomplete="off" oninput="calculate1()">
+    <select id="toCurrency">
+        </select>
+      </div>
+    <button class="submit" onclick="calculate()">Convert</button>
+   </div>
+    <p></p>
+</body>
+</html>
