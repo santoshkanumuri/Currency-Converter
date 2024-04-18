@@ -64,7 +64,8 @@ select {
     border-radius: 6px;
     border: 1px solid #9e9e9e;
     margin: 5px 0;
-    color:rgba(0, 0, 0, 0.66);
+    color:white;
+    background:  rgba(147, 29, 202, 0.577);
     
     
 }
