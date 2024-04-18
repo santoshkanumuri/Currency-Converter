@@ -22,7 +22,7 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:git clone https://github.com/santoshkanumuri/currency-converter.git
 2. Navigate to the project directory: cd Currency-Converter
-3. 3. Open the `index.html` file in your preferred web browser.
+3. Open the `index.html` file in your preferred web browser.
 
 ## Usage
 
