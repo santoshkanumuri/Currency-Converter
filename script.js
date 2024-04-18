@@ -97,7 +97,7 @@ async function fill() {
             let option = document.createElement("option");
             option.text = currencyFullForms[i];
             option.value = currencyShortForms[i];
-            if(option.value=='INR'){
+            if(option.value=='USD'){
                 option.selected = true;
             }
             fromselect.appendChild(option);
@@ -108,7 +108,7 @@ async function fill() {
             let option = document.createElement("option");
             option.text = currencyFullForms[i];
             option.value = currencyShortForms[i];
-            if(option.value=='USD'){
+            if(option.value=='INR'){
                 option.selected = true;
             }
             toselect.appendChild(option);
