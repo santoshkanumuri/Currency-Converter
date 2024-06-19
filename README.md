@@ -26,10 +26,11 @@ To run this project locally, follow these steps:
 
 ## Usage
 
-1. Upon opening the website, you will see the default currency conversion from USD to INR.
-2. To convert between different currencies, select the desired currencies from the dropdown menus.
-3. Enter the amount you wish to convert.
-4. The converted amount will be displayed automatically.
+1. Click the link for the website [Currency Converter](https://santoshkanumuri.github.io/Currency-Converter/)
+2.  Upon opening the website, you will see the default currency conversion from USD to INR.
+3. To convert between different currencies, select the desired currencies from the dropdown menus.
+4. Enter the amount you wish to convert.
+5. The converted amount will be displayed automatically.
 
 ## API Integration
 
