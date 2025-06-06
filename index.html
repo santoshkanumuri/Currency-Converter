@@ -7,28 +7,172 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fffaf0; /* Floral White - a very light orange/cream */
+            color: #333; /* Main text color - dark gray for readability */
+            display: flex;
+            justify-content: center; /* Horizontally centers the .container */
+            align-items: center;   /* Vertically centers the .container */
+            min-height: 100vh;     /* Ensures body takes full viewport height for vertical centering */
+            margin: 0;
+            padding: 15px; /* Provides space around the container on small screens */
+            box-sizing: border-box; 
+        }
+
+        .container {
+            background-color: #ffffff; /* White */
+            padding: 30px 25px; /* Adjusted horizontal padding for better responsiveness on small screens */
+            border-radius: 12px; 
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); 
+            width: auto; /* Allow width to expand based on content */
+            min-width: 320px; /* Minimum width for usability */
+            max-width: 90vw; /* Maximum width relative to viewport to prevent overflow */
+            text-align: center;
+            box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+        }
+
+        h1 {
+            color: #ff7f50; /* Coral - a vibrant orange */
+            margin-top: 0; /* Removed default top margin */
+            margin-bottom: 30px; /* Increased bottom margin */
+            font-size: 26px; /* Adjusted font size */
+            font-weight: 600; /* Slightly bolder */
+            white-space: nowrap; /* Prevent title from wrapping */
+        }
+
+        .wrap1, .wrap2 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px; /* Increased margin */
+            gap: 12px; /* Increased gap */
+            min-width: 280px; /* Ensure minimum width for form elements */
+        }
+
+        input[type="number"], select {
+            flex-grow: 1;
+            min-width: 120px; /* Minimum width for inputs and selects */
+            padding: 14px; /* Increased padding */
+            border: 1px solid #ffdcb2; /* Lighter orange border (e.g., Apricot) */
+            border-radius: 8px; /* More rounded */
+            font-size: 16px;
+            color: #555; /* Darker gray for input text */
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="number"]:focus, select:focus {
+            border-color: #ff7f50; /* Coral on focus */
+            box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.2); /* Subtle glow on focus */
+        }
+        
+        select {
+            cursor: pointer;
+            background-color: #fff;
+            -webkit-appearance: none; /* Removes default styling on Safari/Chrome */
+            -moz-appearance: none;    /* Removes default styling on Firefox */
+            appearance: none;         /* Removes default styling */
+            background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FF7F50%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.4-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E');
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            background-size: 12px 12px;
+            padding-right: 40px; /* Make space for custom arrow */
+        }
+
         .swap-container {
             display: flex;
             justify-content: center;
-            margin: 10px 0;
+            margin: 25px 0; /* Adjusted margin */
         }
         
         .swap-btn {
-            padding: 6px 20px;
+            padding: 10px 22px; /* Adjusted padding */
             cursor: pointer;
-            background-color: rgba(147, 29, 202, 0.271);
+            background-color: #ff7f50; /* Coral */
             color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: background-color 0.3s;
+            border: 2px solid transparent; /* Prepare for hover border */
+            border-radius: 8px; /* More rounded */
+            font-size: 22px; 
+            transition: background-color 0.3s, transform 0.2s, border-color 0.3s, color 0.3s;
+            line-height: 1; 
         }
         
         .swap-btn:hover {
-            background-color: white;
-            border: 1px solid rgba(147, 29, 202, 0.271);
-            color: rgba(147, 29, 202, 0.271);
+            background-color: #fff; /* White background on hover */
+            color: #ff7f50; /* Coral text on hover */
+            border: 2px solid #ff7f50; /* Coral border on hover */
+            transform: scale(1.05);
         }
+
+        /* Basic styling for placeholder text */
+        input::placeholder {
+            color: #bbb; /* Lighter placeholder text */
+            font-style: italic;
+        }
+
+        /* Media queries for better responsiveness */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+                margin: 10px;
+                max-width: 95vw; /* Allow more width on small screens */
+                min-width: 280px;
+            }
+            
+            h1 {
+                font-size: 22px;
+                margin-bottom: 20px;
+                white-space: normal; /* Allow wrapping on very small screens */
+            }
+            
+            .wrap1, .wrap2 {
+                flex-direction: column;
+                gap: 8px;
+                margin-bottom: 20px;
+                min-width: auto;
+            }
+            
+            input[type="number"], select {
+                width: 100%;
+                min-width: auto;
+                padding: 12px;
+            }
+            
+            .swap-btn {
+                padding: 8px 18px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 320px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 15px 10px;
+                min-width: 260px;
+                max-width: 98vw;
+            }
+            
+            h1 {
+                font-size: 20px;
+            }
+        }
+
+        /* Media query for larger screens to allow more expansion */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 80vw; /* Allow more expansion on larger screens */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 70vw; /* Even more expansion on desktop screens */
+            }
+        }
+
     </style>
     <script>
                 function swapCurrencies() {
@@ -58,16 +202,16 @@
     <div class="container">
         <h1>Currency Converter</h1>
         <div class="wrap1">
-            <input type="number" id="fromAmount" placeholder="Enter the Value" autocomplete="off" oninput="calculate()">
+            <input type="number" id="fromAmount" placeholder="Enter amount" autocomplete="off" oninput="calculate()">
             <select id="fromCurrency"></select>
         </div>
         
         <div class="swap-container">
-            <button class="swap-btn" onclick="swapCurrencies()">↔</button>
+            <button class="swap-btn" onclick="swapCurrencies()">&#x21C6;</button>
         </div>
 
         <div class="wrap2">
-            <input type="number" id="toAmount" placeholder="Enter the Value" autocomplete="off" oninput="calculate1()">
+            <input type="number" id="toAmount" placeholder="Converted amount" autocomplete="off" oninput="calculate1()" readonly> <!-- Made toAmount readonly as it's a result -->
             <select id="toCurrency"></select>
         </div>
     </div>

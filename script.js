@@ -1,7 +1,20 @@
 let globalData;
+// Note: For client-side apps, you'll need a build tool like Vite, Webpack, or use a server
+// to properly handle environment variables securely
+
+// For development with a build tool:
+// const API_KEY = process.env.CURRENCY_API_KEY;
+// const API_URL = process.env.CURRENCY_API_URL;
+
+// For now, you can use this approach with a config object:
+const config = {
+    apiKey: process.env.CURRENCY_API_KEY || 'fca_live_LfPuIX8y9TCwWJXRO4m136Tj8Jx3ixulsS78QBwZ',
+    apiUrl: process.env.CURRENCY_API_URL || 'https://api.exchangerate-api.com/v4/latest/'
+};
+
 async function fetcher() {
     try {
-        const response = await fetch('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_LfPuIX8y9TCwWJXRO4m136Tj8Jx3ixulsS78QBwZ');
+        const response = await fetch(`${config.apiUrl}?apikey=${config.apiKey}`);
         if (!response.ok) {
             throw new Error("Data Fetch Error");
         }
