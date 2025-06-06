@@ -2,7 +2,7 @@ let globalData;
 
 async function fetcher() {
     try {
-        const response = await fetch('https://api.freecurrencyapi.com/v1/latest?apikey=fca_live_LfPuIX8y9TCwWJXRO4m136Tj8Jx3ixulsS78QBwZ');
+        const response = await fetch('https://api.freecurrencyapi.com/v1/latest?apikey=your_api_key');
         if (!response.ok) {
             throw new Error("Data Fetch Error");
         }
